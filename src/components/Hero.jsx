@@ -33,7 +33,7 @@ const Hero = () => {
                     initial="hidden"
                     animate="visible"
                     className="my-2 max-w-xl py-6 tracking-tighter text-justify">
-                        Welcome to my portfolio! I'm a Year 2 Business Analytics student at the National University of Singapore (NUS), with a second major in Statistics. Passionate about Software Development and Data Analytics, I enjoy collaborating with teams and working independently to solve challenging problems.
+                        Welcome to my portfolio! I'm a Year 2 Business Analytics student at the National University of Singapore (NUS). Passionate about Software Development and Data Analytics, I enjoy collaborating with teams and working independently to solve challenging problems.
                         <br />
                         <br />
                         As someone keen in entrepreneurship, I love brainstorming new innovative ideas, and leveraging technology to turn them to reality.

@@ -1,72 +1,42 @@
-import project1 from "../assets/projects/project-1.jpg";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
+import portfoliopic from "../assets/projects/portfoliopic.png";
 
 export const EXPERIENCES = [
   {
-    year: "2023 - Present",
-    role: "Senior Full Stack Developer",
-    company: "Google Inc.",
-    description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
-    technologies: ["Javascript", "React.js", "Next.js", "mongoDB"],
+    year: "Jan'25 - Present",
+    role: "Data Analytics Intern (Consumer & SME)",
+    company: "MariBank",
+    description: `Assisting in high-impact projects end to end, to build financial services business (e.g product development, business development, partnerships). Designing initiatives using analytical tools and conceptual problem solving.`,
+    technologies: ["MySQL", "Python", "Pandas", "Project Management"],
   },
   {
-    year: "2022 - 2023",
-    role: "Frontend Developer",
-    company: "Adobe",
-    description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-    technologies: ["HTML", "CSS", "Vue.js", "mySQL"],
+    year: "Jan'25 - Present",
+    role: "Undergraduate Teaching Assistant - IS2218 Digital Platforms for Businesses",
+    company: "NUS Computing",
+    description: `Evaluating the assignments for students to better their understanding of digital businesses (e.g network effects, metrics to a successful platform).`,
+    technologies: ["Financial Statement Analysis", "Consumer Metrics", "Monetization Strategies"],
   },
   {
-    year: "2021 - 2022",
-    role: "Full Stack Developer",
-    company: "Facebook",
-    description: `Developed and maintained web applications using JavaScript, React.js, and Node.js. Designed and implemented RESTful APIs for data communication. Collaborated with cross-functional teams to deliver high-quality software products on schedule.`,
-    technologies: ["Python", "Svelte", "Three.js", "Postgres"],
+    year: "Aug'24 - Dec'24",
+    role: "Undergraduate Teaching Assistant - CS1010A Programming Methodology",
+    company: "NUS Computing",
+    description: `Taught programming concepts in Python (e.g Data Structures, OOP, Searching and Sorting). Facilitated weekly tutorial sessions and evaluation of the students' assignments.`,
+    technologies: ["Python", "Object-Oriented Programming", "Algorithms", "Teaching"],
   },
   {
-    year: "2020 - 2021",
-    role: "Software Engineer",
-    company: "Paypal",
-    description: `Contributed to the development of web applications using JavaScript, React.js, and Node.js. Managed databases and implemented data storage solutions using MongoDB. Worked closely with product managers to prioritize features and enhancements.`,
-    technologies: ["Ruby", "Rails", "PHP", "Sqlite"],
+    year: "Feb'23 - Jul'23",
+    role: "Business Internet Banking Representative",
+    company: "United Overseas Bank Singapore",
+    description: `Managed over 100 customer inquiries and escalations a day in a timely and professional manner, ensuring high levels of customer satisfaction and loyalty to the brand. Facilitated the onboarding of local businesses to the bank. Trained in Business Internet Banking and Remittances.`,
+    technologies: ["Customer Relationship Management", "Problem Solving"],
   },
 ];
 
 export const PROJECTS = [
   {
-    title: "E-Commerce Website",
-    image: project1,
-    description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
-  },
-  {
-    title: "Task Management App",
-    image: project2,
-    description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
-  },
-  {
     title: "Portfolio Website",
-    image: project3,
+    image: portfoliopic,
     description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
-  },
-  {
-    title: "Blogging Platform",
-    image: project4,
-    description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
+      "A personal portfolio showcasing my experience, technical skills, and web development projects.",
+    technologies: ["ReactJS", "Tailwind CSS", "Framer Motion"],
   },
 ];
-
-export const CONTACT = {
-  address: "767 Fifth Avenue, New York, NY 10153 ",
-  phoneNo: "+12 4555 666 00 ",
-  email: "me@example.com",
-};

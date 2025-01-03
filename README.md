@@ -1,8 +1,10 @@
-# React + Vite
+This is my portfolio website. It contains basic information about myself, as well as my experience and skills.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The main code used can be found in the src folder.
+    - App.jsx is the main frame of the website.
+    - The `components` folder contains the different segments used in App.jsx.
+    - The `assets` folder contains the different images used within each component.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Techstack used:
+1. React.js
+2. Tailwind CSS
