@@ -24,11 +24,16 @@ const About = () => {
             className="w-full lg:w-1/2">
                     <div className="flex justify-center lg:justify-start text-justify">
                         <p className="my-2 max-w-xl py-6">
-                        I am a motivated and adaptable learner always seeking to upskill. As a Business Analytics student under the School of Computing, I have had hands-on experience working with technologies like Python and Java, and various languages used in data analytics such as MySQL and R.
-                        My journey in programming initially began with a deep curiosity for how things work, coupled by a passion for ideation and value creation, and it has evolved into a passion for pursuing a career where I can leverage technology to drive meaningful change in businesses.
+                        I'm Yeow Kang, a curious and driven learner passionate about leveraging technology to solve real-world problems. Currently a <strong>Business Analytics</strong> sophomore at the National University of Singapore under the School of Computing, I’ve gained hands-on experience in Python, Java, MySQL, and R, along with a strong foundation in data structures, algorithms, and applied machine learning.
                         <br />
                         <br />
-                        I am always eager to expand my knowledge and embrace new challenges. Beyond my academic pursuits, I actively engage in self-directed learning to explore new technologies. Currently, I am passionate about learning to create efficient, user-centric web applications using HTML, CSS, and JavaScript.
+                        My journey in tech began with a deep curiosity about how systems work, which quickly grew into a love for building things from scratch and creating value through innovation. Over time, this has evolved into a focused interest in <strong>full-stack development and AI</strong>.
+                        <br />
+                        <br />
+                        Outside of academics, I actively seek out new challenges through self-initiated projects and continuous learning. I’m currently exploring the intersection of web development and intelligent systems, building user-centric applications with technologies like React, Node.js, and TypeScript, and diving deeper into AI through hands-on experimentation with graph databases and knowledge-based systems.
+                        <br />
+                        <br />
+                        Whether it’s automating workflows, creating intuitive interfaces, or uncovering insights from data, I’m passionate about using technology to <strong>make a tangible impact</strong>.
                         </p>
                     </div>
                 </motion.div>

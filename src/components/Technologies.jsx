@@ -2,11 +2,11 @@ import pythonlogo from "../assets/python.png";
 import javalogo from "../assets/java.png";
 import rlogo from "../assets/R.png";
 import mysqllogo from "../assets/mysql.png";
-import htmllogo from "../assets/html.png";
-import csslogo from "../assets/css.png";
+import vuelogo from "../assets/Vue.png";
+import firebaselogo from "../assets/firebase.png";
 import jslogo from "../assets/js.png";
 import reactjslogo from "../assets/reactjs.png";
-import nodejslogo from "../assets/nodejs.png";
+import nodejslogo from "../assets/node.png";
 import {motion} from "framer-motion";
 
 const iconVariants = (duration) => ({
@@ -60,54 +60,6 @@ const Technologies = () => {
                 </div>
             </motion.div>
 
-            {/* R */}
-            <motion.div 
-            variants={iconVariants(5)}
-            initial="initial"
-            animate="animate"
-            className="group relative rounded-2xl border-2 border-neutral-800 p-4">
-                <img src={rlogo} alt="R" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-800 bg-opacity-75 text-white text-lg font-semibold p-2">
-                    R
-                </div>
-            </motion.div>
-
-            {/* MySQL */}
-            <motion.div 
-            variants={iconVariants(2)}
-            initial="initial"
-            animate="animate"
-            className="group relative rounded-2xl border-2 border-neutral-800 p-4">
-                <img src={mysqllogo} alt="MySQL" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-800 bg-opacity-75 text-white text-lg font-semibold p-2">
-                    MySQL
-                </div>
-            </motion.div>
-
-            {/* HTML */}
-            <motion.div 
-            variants={iconVariants(6)}
-            initial="initial"
-            animate="animate"
-            className="group relative rounded-2xl border-2 border-neutral-800 p-4">
-                <img src={htmllogo} alt="HTML" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-800 bg-opacity-75 text-white text-lg font-semibold p-2">
-                    HTML
-                </div>
-            </motion.div>
-
-            {/* CSS */}
-            <motion.div 
-            variants={iconVariants(4)}
-            initial="initial"
-            animate="animate"
-            className="group relative rounded-2xl border-2 border-neutral-800 p-4">
-                <img src={csslogo} alt="CSS" />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-800 bg-opacity-75 text-white text-lg font-semibold p-2">
-                    CSS
-                </div>
-            </motion.div>
-
             {/* JavaScript */}
             <motion.div 
             variants={iconVariants(3.5)}
@@ -117,6 +69,18 @@ const Technologies = () => {
                 <img src={jslogo} alt="JavaScript" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-800 bg-opacity-75 text-white text-lg font-semibold p-2">
                     JavaScript
+                </div>
+            </motion.div>
+
+            {/* Vue */}
+            <motion.div 
+            variants={iconVariants(6)}
+            initial="initial"
+            animate="animate"
+            className="group relative rounded-2xl border-2 border-neutral-800 p-4">
+                <img src={vuelogo} alt="Vue.js" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-800 bg-opacity-75 text-white text-lg font-semibold p-2">
+                    Vue.js
                 </div>
             </motion.div>
 
@@ -141,6 +105,42 @@ const Technologies = () => {
                 <img src={nodejslogo} alt="NodeJS" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-800 bg-opacity-75 text-white text-lg font-semibold p-2">
                     NodeJS
+                </div>
+            </motion.div>
+
+            {/* R */}
+            <motion.div 
+            variants={iconVariants(5)}
+            initial="initial"
+            animate="animate"
+            className="group relative rounded-2xl border-2 border-neutral-800 p-4">
+                <img src={rlogo} alt="R" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-800 bg-opacity-75 text-white text-lg font-semibold p-2">
+                    R
+                </div>
+            </motion.div>
+
+            {/* MySQL */}
+            <motion.div 
+            variants={iconVariants(2)}
+            initial="initial"
+            animate="animate"
+            className="group relative rounded-2xl border-2 border-neutral-800 p-4">
+                <img src={mysqllogo} alt="MySQL" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-800 bg-opacity-75 text-white text-lg font-semibold p-2">
+                    MySQL
+                </div>
+            </motion.div>
+
+            {/* Firebase */}
+            <motion.div 
+            variants={iconVariants(4)}
+            initial="initial"
+            animate="animate"
+            className="group relative rounded-2xl border-2 border-neutral-800 p-4">
+                <img src={firebaselogo} alt="Firebase" />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-800 bg-opacity-75 text-white text-lg font-semibold p-2">
+                    Firebase
                 </div>
             </motion.div>
 
