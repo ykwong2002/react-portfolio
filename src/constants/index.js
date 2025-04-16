@@ -59,6 +59,7 @@ export const PROJECTS = [
     description:
       "A Retrieval Augemented Generation system that uses OpenAI's API to generate responses to natural language queries about OpenAI's latest research papers (data can be customised).",
     technologies: ["OpenAI", "LLM", "RAG", "Retrieval Augmentation"],
+    repoUrl: "https://github.com/ykwong2002/Simple-OpenAI-RAG"
   },
   {
     title: "Spotifynd",
@@ -66,6 +67,7 @@ export const PROJECTS = [
     description:
       "A playlist continuation recommendation system that uses Machine Learning to recommend the next best song based on user's listening behaviour.",
     technologies: ["Scikit-Learn", "Machine Learning", "Collaborative Filtering", "Deep Neural Network"],
+    repoUrl: "https://github.com/ouch528/Spotifynd"
   },
   {
     title: "Nomster",
@@ -73,5 +75,6 @@ export const PROJECTS = [
     description:
       "A social food discovery platform where users share restaurant experiences, maintain wishlists, and connect with friends over dining adventures.",
     technologies: ["Vue.js", "Framer Motion", "Firebase", "PrimeVue"],
+    repoUrl: "https://github.com/BT3103AppDev1/l1-finaltermproject-2425s2l1_group_21"
   },
 ];
