@@ -2,6 +2,8 @@ import portfoliopic from "../assets/projects/portfoliopic.png";
 import nomster from "../assets/projects/nomster.png";
 import spotifind from "../assets/projects/spotifind.png";
 import openai from "../assets/projects/openai-logo.png";
+import musemap from "../assets/projects/musemap.png";
+
 export const EXPERIENCES = [
   {
     year: "Jan'25 - Apr'25",
@@ -53,6 +55,14 @@ export const EXPERIENCES = [
 ];
 
 export const PROJECTS = [
+  {
+    title: "MuseMap (Work in Progress)",
+    image: musemap,
+    description:
+      "A music composition assistant that leverages music theory principles and AI to create music based on genre, mood and complexity levels to generate MIDI compositions.",
+    technologies: ["Neo4J", "Knowledge Graphs", "RAG", "TypeScript"],
+    repoUrl: "https://github.com/ykwong2002/MuseMap"
+  },
   {
     title: "Simple OpenAI RAG Project",
     image: openai,
