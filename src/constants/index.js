@@ -1,8 +1,7 @@
-import portfoliopic from "../assets/projects/portfoliopic.png";
 import nomster from "../assets/projects/nomster.png";
 import spotifind from "../assets/projects/spotifind.png";
-import openai from "../assets/projects/openai-logo.png";
-import musemap from "../assets/projects/musemap.png";
+import linklist from "../assets/projects/LINKLIST.jpg";
+import comingsoon from "../assets/projects/comingsoon.jpg";
 
 export const EXPERIENCES = [
   {
@@ -56,20 +55,20 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "MuseMap (Work in Progress)",
-    image: musemap,
+    title: "GitGroove (Work in Progress)",
+    image: comingsoon,
     description:
-      "A music composition assistant that leverages music theory principles and AI to create music based on genre, mood and complexity levels to generate MIDI compositions.",
-    technologies: ["Neo4J", "Knowledge Graphs", "RAG", "TypeScript"],
-    repoUrl: "https://github.com/ykwong2002/MuseMap"
+      "GitGroove is a web-based platform that brings Git-style version control to music production. Inspired by GitHub and DAWs like GarageBand, GitGroove empowers musicians to collaboratively compose, experiment, and evolve music — all while tracking every sonic decision.",
+    technologies: ["Git", "Version Control", "Music Production"],
+    repoUrl: "https://github.com/ykwong2002/GitGroove"
   },
   {
-    title: "Simple OpenAI RAG Project",
-    image: openai,
+    title: "LinkList",
+    image: linklist,
     description:
-      "A Retrieval Augemented Generation system that uses OpenAI's API to generate responses to natural language queries about OpenAI's latest research papers (data can be customised).",
-    technologies: ["OpenAI", "LLM", "RAG", "Retrieval Augmentation"],
-    repoUrl: "https://github.com/ykwong2002/Simple-OpenAI-RAG"
+      "A Telegram bot that simplifies networking in group chats by compiling LinkedIn and Instagram links into a single, organized chain message. Perfect for networking events, orientation camps, and professional group chats.",
+    technologies: ["Python", "Automation", "Telegram Bot", "Problem-Solving"],
+    repoUrl: "https://github.com/ykwong2002/LinkListBot"
   },
   {
     title: "Spotifynd",
