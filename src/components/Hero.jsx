@@ -28,7 +28,7 @@ const Hero = () => {
                       </span>
                       <div className="mt-2 h-0.5 w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
                       <span className="block mt-2 bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-3xl font-semibold tracking-tight text-transparent">
-                        Aspiring Software Engineer
+                        Aspiring AI Engineer
                       </span>
                     </motion.div>
 
