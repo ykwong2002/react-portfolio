@@ -43,11 +43,11 @@ const About = () => {
                         </div>
                         
                         <div className="space-y-4 text-neutral-300 leading-relaxed">
-                            <p>I'm Yeow Kang, a curious and driven learner passionate about leveraging technology to solve real-world problems. Currently a <span className="text-purple-400 font-medium">Business Analytics</span> sophomore at the National University of Singapore under the School of Computing, I've gained hands-on experience in Python, Java, MySQL, and R, along with a strong foundation in data structures, algorithms, and applied machine learning.</p>
+                            <p>I'm Yeow Kang, a curious and driven learner passionate about leveraging technology to solve real-world problems. Currently a <span className="text-purple-400 font-medium">Business Analytics</span> junior at the National University of Singapore under the School of Computing, I've gained hands-on experience in Python, Java, MySQL, and R, along with a strong foundation in data structures, algorithms, and applied machine learning.</p>
                             
-                            <p>My journey in tech began with a deep curiosity about how systems work, which quickly grew into a love for building things from scratch and creating value through innovation. Over time, this has evolved into a focused interest in <span className="text-purple-400 font-medium">full-stack development and AI</span>.</p>
+                            <p>My journey in tech began with a deep curiosity about how systems work, which quickly grew into a love for building things from scratch and creating value through innovation. Over time, this has evolved into a focused interest in <span className="text-purple-400 font-medium">automated decision-making through AI</span>.</p>
                             
-                            <p>Outside of academics, I actively seek out new challenges through self-initiated projects and continuous learning. I'm currently exploring the intersection of web development and intelligent systems, building user-centric applications with technologies like React, Node.js, and TypeScript, and diving deeper into AI through hands-on experimentation with graph databases and knowledge-based systems.</p>
+                            <p>Outside of academics, I actively seek out new challenges through self-initiated projects and continuous learning. I'm currently exploring the intersection of financial markets and intelligent systems, building pipelines with models from HuggingFace, and diving deeper into AI through hands-on experimentation.</p>
                             
                             <p>Whether it's automating workflows, creating intuitive interfaces, or uncovering insights from data, I'm passionate about using technology to <span className="text-purple-400 font-medium">make a tangible impact</span>.</p>
                         </div>
