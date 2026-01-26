@@ -1,4 +1,4 @@
-import aboutImg from "../assets/about.png"
+import aboutImg from "../assets/about.gif"
 import { motion } from "framer-motion";
 import { FaUserGraduate } from "react-icons/fa";
 
@@ -43,17 +43,23 @@ const About = () => {
                         </div>
                         
                         <div className="space-y-4 text-neutral-300 leading-relaxed">
-                            <p>I'm Yeow Kang, a curious and driven learner passionate about leveraging technology to solve real-world problems. Currently a <span className="text-purple-400 font-medium">Business Analytics</span> junior at the National University of Singapore under the School of Computing, I've gained hands-on experience in Python, Java, MySQL, and R, along with a strong foundation in data structures, algorithms, and applied machine learning.</p>
+                            <p>I&apos;m Yeow Kang, a curious and driven learner passionate about leveraging technology to solve real-world problems. Currently a <span className="text-purple-400 font-medium">Business Analytics</span> junior at the National University of Singapore under the School of Computing, I&apos;ve gained hands-on experience in Python, Java, MySQL, and R, along with a strong foundation in data structures, algorithms, and applied machine learning.</p>
                             
                             <p>My journey in tech began with a deep curiosity about how systems work, which quickly grew into a love for building things from scratch and creating value through innovation. Over time, this has evolved into a focused interest in <span className="text-purple-400 font-medium">automated decision-making through AI</span>.</p>
-                            
-                            <p>Outside of academics, I actively seek out new challenges through self-initiated projects and continuous learning. I'm currently exploring the intersection of financial markets and intelligent systems, building pipelines with models from HuggingFace, and diving deeper into AI through hands-on experimentation.</p>
-                            
-                            <p>Whether it's automating workflows, creating intuitive interfaces, or uncovering insights from data, I'm passionate about using technology to <span className="text-purple-400 font-medium">make a tangible impact</span>.</p>
                         </div>
                     </div>
                 </motion.div>
             </div>
+            <motion.div 
+              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.6 }}
+              className="mt-10 text-neutral-300 leading-relaxed space-y-4"
+            >
+              <p>Outside of academics, I actively seek out new challenges through self-initiated projects and continuous learning. I&apos;m currently exploring the intersection of financial markets and intelligent systems, building pipelines with models from HuggingFace, and diving deeper into AI through hands-on experimentation.</p>
+
+              <p>Whether it&apos;s automating workflows, creating intuitive interfaces, or uncovering insights from data, I&apos;m passionate about using technology to <span className="text-purple-400 font-medium">make a tangible impact</span>.</p>
+            </motion.div>
           </div>
         </div>
     </div>

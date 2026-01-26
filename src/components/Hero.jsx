@@ -37,11 +37,11 @@ const Hero = () => {
                     initial="hidden"
                     animate="visible"
                     className="max-w-xl py-4 text-lg text-neutral-300 leading-relaxed">
-                        Welcome to my portfolio! I'm a Year 2 Business Analytics student at the National University of Singapore (NUS). Passionate about <span className="text-purple-400">Software Development</span> and <span className="text-purple-400">Data Analytics</span>, I enjoy collaborating with teams and working independently to solve challenging problems.
+                        Welcome to my portfolio! I'm a Year 3 Business Analytics student at the National University of Singapore (NUS). Passionate about <span className="text-purple-400">Artificial Intelligence</span> and <span className="text-purple-400">automated decision-making</span>, I enjoy collaborating with teams to solve challenging problems using tech.
                         <br />
                         <br />
                         As someone keen in entrepreneurship, I love brainstorming new innovative ideas, and leveraging technology to turn them to reality.
-                        Beyond work and academics, I'm an avid traveler always seeking new experiences around the world. I also enjoy playing basketball and ultimate frisbee in my free time!
+                        Beyond work and academics, I'm an avid traveler always seeking new experiences around the world. I also enjoy bouldering and playing ultimate frisbee in my free time!
                     </motion.p>
                 </div>
             </div>

@@ -2,8 +2,8 @@ import pythonlogo from "../assets/python.png";
 import javalogo from "../assets/java.png";
 import rlogo from "../assets/R.png";
 import mysqllogo from "../assets/mysql.png";
-import huggingfaceLogo from "../assets/hugging_face.png";
-import pytorchlogo from "../assets/pytorch.png";
+import vuelogo from "../assets/Vue.png";
+import firebaselogo from "../assets/firebase.png";
 import jslogo from "../assets/js.png";
 import reactjslogo from "../assets/reactjs.png";
 import nodejslogo from "../assets/node.png";
@@ -72,15 +72,15 @@ const Technologies = () => {
                 </div>
             </motion.div>
 
-            {/* Hugging Face */}
+            {/* Vue */}
             <motion.div 
             variants={iconVariants(6)}
             initial="initial"
             animate="animate"
             className="group relative rounded-2xl border-2 border-neutral-800 p-4">
-                <img src={huggingfaceLogo} alt="Hugging Face" className="h-16 w-16 object-contain" />
+                <img src={vuelogo} alt="Vue.js" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-800 bg-opacity-75 text-white text-lg font-semibold p-2">
-                    Hugging Face
+                    Vue.js
                 </div>
             </motion.div>
 
@@ -132,15 +132,15 @@ const Technologies = () => {
                 </div>
             </motion.div>
 
-            {/* PyTorch */}
+            {/* Firebase */}
             <motion.div 
             variants={iconVariants(4)}
             initial="initial"
             animate="animate"
             className="group relative rounded-2xl border-2 border-neutral-800 p-4">
-                <img src={pytorchlogo} alt="PyTorch" className="h-16 w-16 object-contain" />
+                <img src={firebaselogo} alt="Firebase" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-neutral-800 bg-opacity-75 text-white text-lg font-semibold p-2">
-                    PyTorch
+                    Firebase
                 </div>
             </motion.div>
 
