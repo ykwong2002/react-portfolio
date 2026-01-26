@@ -49,34 +49,36 @@ const Contact = () => {
                 </a>
               </div>
               
-              <div className="flex items-center justify-center gap-6 text-4xl">
-                <a 
-                  href="https://www.linkedin.com/in/wongyeowkang" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="LinkedIn Profile"
-                  className="text-neutral-400 hover:text-purple-400 transition-colors duration-300"
-                >
-                  <FaLinkedin />
-                </a>
-                <a 
-                  href="https://github.com/ykwong2002" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="GitHub Profile"
-                  className="text-neutral-400 hover:text-purple-400 transition-colors duration-300"
-                >
-                  <FaGithub />
-                </a>
-                <a 
-                  href="https://www.instagram.com/kang.eroo" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  aria-label="Instagram Profile"
-                  className="text-neutral-400 hover:text-purple-400 transition-colors duration-300"
-                >
-                  <FaInstagram />
-                </a>
+              <div className="flex flex-wrap items-center justify-center gap-4 text-4xl">
+                <div className="flex items-center gap-6">
+                  <a 
+                    href="https://www.linkedin.com/in/wongyeowkang" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label="LinkedIn Profile"
+                    className="text-neutral-400 hover:text-purple-400 transition-colors duration-300"
+                  >
+                    <FaLinkedin />
+                  </a>
+                  <a 
+                    href="https://github.com/ykwong2002" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label="GitHub Profile"
+                    className="text-neutral-400 hover:text-purple-400 transition-colors duration-300"
+                  >
+                    <FaGithub />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/kang.eroo" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    aria-label="Instagram Profile"
+                    className="text-neutral-400 hover:text-purple-400 transition-colors duration-300"
+                  >
+                    <FaInstagram />
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>
