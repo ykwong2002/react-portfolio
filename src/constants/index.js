@@ -5,6 +5,24 @@ import comingsoon from "../assets/projects/comingsoon.jpg";
 
 export const EXPERIENCES = [
   {
+    year: "Aug'25 - Present",
+    role: "Partner Solution Consultant Intern (AI Apps)",
+    company: "Workato",
+    description: [
+      "Automated Certification Reporting: Deployed a workflow automation app that allows Workato partners to instantly view company-wide certification progress, cutting report generation time from 3 days to just 5 seconds.",
+      "AI Demo Solutions: Built AI integrations connecting Workato’s Model Context Protocol (MCP) servers with LLM clients like ChatGPT and local runtimes such as LMStudio, enabling partners to turn Workato workflows into interactive AI tools.",
+      "Scalable RAG Pipelines: Developed LangChain pipelines with Workato MCP servers and vector databases (e.g., ChromaDB) to implement retrieval-augmented generation, showcasing enterprise-ready context injection for AI applications.",
+    ],
+    technologies: [
+      "Model Context Protocol (MCP)",
+      "LangChain",
+      "ChromaDB",
+      "Large Language Models",
+      "Workflow Automation",
+      "Retrieval-Augmented Generation",
+    ],
+  },
+  {
     year: "Jan'25 - Apr'25",
     role: "Data Analytics Intern (Consumer & SME)",
     company: "MariBank",
@@ -55,12 +73,12 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "GitGroove (Work in Progress)",
+    title: "Trading Project (Work in Progress)",
     image: comingsoon,
     description:
-      "GitGroove is a web-based platform that brings Git-style version control to music production. Inspired by GitHub and DAWs like GarageBand, GitGroove empowers musicians to collaboratively compose, experiment, and evolve music — all while tracking every sonic decision.",
-    technologies: ["Git", "Version Control", "Music Production"],
-    repoUrl: "https://github.com/ykwong2002/GitGroove"
+      "Working on a keyword-focused reinforcement learning system for news-driven market prediction, converting rolling financial news into structured sentiment features and generating adaptive next-day trading signals. The modular architecture supports multiple assets with shared representations (e.g Gold, NVIDIA) and independently trained decision policies, enabling scalable, automated market insights.",
+    technologies: ["Reinforcement Learning with Verified Rewards", "FinBERT", "Financial Market Prediction"],
+    repoUrl: "https://github.com/ykwong2002/trading-project"
   },
   {
     title: "LinkList",
