@@ -1,70 +1,123 @@
-import profilePic from "../assets/wykSquareProfile.png"
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import { FiArrowDown, FiArrowUpRight, FiMapPin } from "react-icons/fi";
+import profilePic from "../assets/wykSquareProfile.png";
+import resume from "../assets/Wong_Yeow_Kang_Resume.pdf";
+import { PROFILE, SOCIALS, STATS } from "../constants";
 
-const container = (delay) => ({
-    hidden: {x: -100, opacity: 0},
-    visible: {x: 0, opacity: 1, transition: {duration: 0.5, delay: delay}}
-})
+const rise = (delay) => ({
+  initial: { opacity: 0, y: 16 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.5, delay },
+});
 
 const Hero = () => {
+  const [before, highlight, after] = PROFILE.tagline;
+
   return (
-    <div className="border-b border-neutral-900 pb-16 pt-8 lg:pb-24">
-        <div className="flex flex-wrap items-center">
-            <div className="w-full lg:w-1/2">
-                <div className="flex flex-col items-center lg:items-start">
-                    <motion.h1 
-                    variants={container(0)}
-                    initial="hidden"
-                    animate="visible"
-                    className="pb-8 text-6xl font-bold tracking-tight lg:pb-12 lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-white to-neutral-400">Wong Yeow Kang</motion.h1>
-                    
-                    <motion.div 
-                      variants={container(0.5)}
-                      initial="hidden"
-                      animate="visible"
-                      className="relative mb-8">
-                      <span className="bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-500 bg-clip-text text-4xl font-semibold tracking-tight text-transparent">
-                        NUS Business Analytics
-                      </span>
-                      <div className="mt-2 h-0.5 w-full bg-gradient-to-r from-transparent via-purple-500 to-transparent"></div>
-                      <span className="block mt-2 bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-3xl font-semibold tracking-tight text-transparent">
-                        Aspiring AI Engineer
-                      </span>
-                    </motion.div>
+    <div className="pb-6 pt-12 sm:pt-20">
+      <div className="grid items-center gap-12 lg:grid-cols-[1.35fr_1fr]">
+        <div>
+          <motion.p
+            {...rise(0)}
+            className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/5 px-3.5 py-1.5 font-mono text-xs text-neutral-300 sm:text-sm"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 motion-safe:animate-ping"></span>
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+            </span>
+            {PROFILE.role}
+          </motion.p>
 
-                    <motion.p 
-                    variants={container(1)}
-                    initial="hidden"
-                    animate="visible"
-                    className="max-w-xl py-4 text-lg text-neutral-300 leading-relaxed">
-                        Welcome to my portfolio! I'm a Year 3 Business Analytics student at the National University of Singapore (NUS). Passionate about <span className="text-purple-400">Artificial Intelligence</span> and <span className="text-purple-400">automated decision-making</span>, I enjoy collaborating with teams to solve challenging problems using tech.
-                        <br />
-                        <br />
-                        As someone keen in entrepreneurship, I love brainstorming new innovative ideas, and leveraging technology to turn them to reality.
-                        Beyond work and academics, I'm an avid traveler always seeking new experiences around the world. I also enjoy bouldering and playing ultimate frisbee in my free time!
-                    </motion.p>
-                </div>
+          <motion.h1
+            {...rise(0.1)}
+            className="mt-6 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl"
+          >
+            {PROFILE.name}
+          </motion.h1>
+
+          <motion.p
+            {...rise(0.2)}
+            className="mt-5 text-xl text-neutral-200 sm:text-2xl"
+          >
+            {before}
+            <span className="text-emerald-400">{highlight}</span>
+            {after}
+          </motion.p>
+
+          <motion.p
+            {...rise(0.3)}
+            className="mt-4 max-w-xl leading-relaxed text-neutral-400"
+          >
+            {PROFILE.intro}
+          </motion.p>
+
+          <motion.div {...rise(0.4)} className="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-lg bg-emerald-400 px-5 py-2.5 font-medium text-neutral-950 transition-colors hover:bg-emerald-300"
+            >
+              View projects <FiArrowDown aria-hidden="true" />
+            </a>
+            <a
+              href={resume}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-5 py-2.5 font-medium text-white transition-colors hover:border-emerald-400/50 hover:text-emerald-400"
+            >
+              Resume <FiArrowUpRight aria-hidden="true" />
+            </a>
+            <div className="ml-1 flex items-center gap-1">
+              {SOCIALS.map(({ label, href, icon: Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${label} profile`}
+                  className="rounded-lg p-2 text-2xl text-neutral-400 transition-colors hover:text-emerald-400"
+                >
+                  <Icon />
+                </a>
+              ))}
             </div>
-            <div className="w-full lg:w-1/2 lg:p-8">
-                <div className="flex justify-center">
-                    <motion.div
-                      initial={{x: 100, opacity: 0}}
-                      animate={{x: 0, opacity: 1 }}
-                      transition={{duration: 0.5, delay: 1}}
-                      className="relative group"
-                    >
-                      <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-purple-600 to-pink-600 opacity-75 blur-lg group-hover:opacity-100 transition duration-1000"></div>
-                      <img 
-                        src={profilePic} 
-                        alt="Wong Yeow Kang" 
-                        className="relative rounded-2xl shadow-2xl z-10 transition-transform duration-500 group-hover:scale-[1.02]" 
-                      />
-                    </motion.div>
-                </div>
-            </div>
+          </motion.div>
         </div>
-    </div>
-  )
-}
 
-export default Hero
+        <motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative mx-auto w-full max-w-sm"
+        >
+          <div className="absolute -inset-3 rounded-[2rem] bg-emerald-400/10 blur-2xl"></div>
+          <img
+            src={profilePic}
+            alt="Wong Yeow Kang"
+            className="relative aspect-square w-full rounded-3xl border border-white/10 object-cover"
+          />
+          <p className="absolute -bottom-3 left-4 inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-neutral-950 px-3 py-1.5 font-mono text-xs text-neutral-300">
+            <FiMapPin className="text-emerald-400" aria-hidden="true" />
+            {PROFILE.location}
+          </p>
+        </motion.div>
+      </div>
+
+      <motion.div
+        {...rise(0.5)}
+        className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 lg:grid-cols-4"
+      >
+        {STATS.map((stat) => (
+          <div key={stat.label} className="flex flex-col bg-neutral-950 p-5 sm:p-6">
+            <p className="font-mono text-2xl font-medium tracking-tight text-white sm:text-3xl">
+              {stat.value}
+            </p>
+            <p className="mt-2 text-sm leading-snug text-neutral-400">{stat.label}</p>
+            <p className="mt-auto pt-3 font-mono text-xs text-emerald-400">{stat.source}</p>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
+
+export default Hero;

@@ -1,90 +1,54 @@
-import {motion} from "framer-motion";
-import { FaLinkedin, FaGithub, FaInstagram, FaEnvelope, FaFilePdf } from "react-icons/fa";
+import { FiDownload, FiMail } from "react-icons/fi";
 import resume from "../assets/Wong_Yeow_Kang_Resume.pdf";
+import { PROFILE, SOCIALS } from "../constants";
+import { Section, Card } from "./ui";
 
 const Contact = () => {
   return (
-    <div className="border-b border-neutral-900 pb-20 pt-8">
-        <motion.h1 
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{duration: 0.5 }}
-        className="mb-16 mt-12 text-center text-4xl font-bold">Get in Touch</motion.h1>
-        
-        <div className="mx-auto max-w-2xl">
-          <motion.div 
-            whileInView={{ opacity: 1, y: 0 }}
-            initial={{ opacity: 0, y: 50 }}
-            transition={{ duration: 0.7 }}
-            className="overflow-hidden rounded-lg bg-neutral-900/30 p-8 backdrop-blur-sm shadow-lg hover:shadow-purple-900/20 transition-all"
-          >
-            <div className="text-center">
-              <div className="flex justify-center mb-8">
-                <a href={resume} download className="group">
-                  <motion.div
-                    whileHover={{
-                      scale: 1.05,
-                    }}
-                    transition={{ duration: 0.3 }}
-                    className="relative overflow-hidden rounded-full"
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 opacity-90 transition-all group-hover:opacity-100"></div>
-                    <div className="relative flex items-center justify-center gap-2 px-8 py-4 z-10 text-white font-medium">
-                      <FaFilePdf className="text-xl" />
-                      Download Resume
-                    </div>
-                  </motion.div>
-                </a>
-              </div>
-              
-              <div className="flex items-center justify-center gap-3 mb-8">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-purple-900/50">
-                  <FaEnvelope className="text-purple-400" />
-                </div>
-                <a 
-                  href="mailto:wongyeowkang@gmail.com" 
-                  className="text-lg text-purple-300 hover:text-white transition-colors hover:underline"
-                >
-                  wongyeowkang@gmail.com
-                </a>
-              </div>
-              
-              <div className="flex flex-wrap items-center justify-center gap-4 text-4xl">
-                <div className="flex items-center gap-6">
-                  <a 
-                    href="https://www.linkedin.com/in/wongyeowkang" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    aria-label="LinkedIn Profile"
-                    className="text-neutral-400 hover:text-purple-400 transition-colors duration-300"
-                  >
-                    <FaLinkedin />
-                  </a>
-                  <a 
-                    href="https://github.com/ykwong2002" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    aria-label="GitHub Profile"
-                    className="text-neutral-400 hover:text-purple-400 transition-colors duration-300"
-                  >
-                    <FaGithub />
-                  </a>
-                  <a 
-                    href="https://www.instagram.com/kang.eroo" 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    aria-label="Instagram Profile"
-                    className="text-neutral-400 hover:text-purple-400 transition-colors duration-300"
-                  >
-                    <FaInstagram />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-    </div>
-  )
-}
+    <>
+      <Section id="contact" index="05" title="Get in touch">
+        <Card className="p-8 sm:p-12">
+          <p className="max-w-2xl text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+            Working on something in ML or LLMs, or hiring for it? I&apos;d love to hear about it.
+          </p>
 
-export default Contact
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <a
+              href={`mailto:${PROFILE.email}`}
+              className="inline-flex items-center gap-2 rounded-lg bg-emerald-400 px-5 py-2.5 font-medium text-neutral-950 transition-colors hover:bg-emerald-300"
+            >
+              <FiMail aria-hidden="true" /> {PROFILE.email}
+            </a>
+            <a
+              href={resume}
+              download="Wong_Yeow_Kang_Resume.pdf"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-5 py-2.5 font-medium text-white transition-colors hover:border-emerald-400/50 hover:text-emerald-400"
+            >
+              <FiDownload aria-hidden="true" /> Download resume
+            </a>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+            {SOCIALS.map(({ label, href, icon: Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-mono text-sm text-neutral-400 transition-colors hover:text-emerald-400"
+              >
+                <Icon className="text-lg" aria-hidden="true" /> {label}
+              </a>
+            ))}
+          </div>
+        </Card>
+      </Section>
+
+      <footer className="border-t border-white/5 py-8 font-mono text-xs text-neutral-500">
+        © {new Date().getFullYear()} {PROFILE.name} · Built with React, Tailwind and Framer Motion
+      </footer>
+    </>
+  );
+};
+
+export default Contact;

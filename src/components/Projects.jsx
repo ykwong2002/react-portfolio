@@ -1,63 +1,176 @@
-import { PROJECTS } from "../constants"
-import { motion } from "framer-motion"
-import { FaGithub } from "react-icons/fa"
+import { FaGithub } from "react-icons/fa";
+import { FiArrowUpRight, FiLock } from "react-icons/fi";
+import { PROJECTS } from "../constants";
+import { Section, Card, Tag, Label } from "./ui";
+import VaultGraph from "./VaultGraph";
+import DocExtractArt from "./DocExtractArt";
+
+const VISUALS = {
+  "doc-extract": DocExtractArt,
+  "vault-graph": VaultGraph,
+};
+
+const SPANS = {
+  half: "lg:col-span-6",
+  full: "lg:col-span-12",
+};
+
+const RepoLink = ({ href }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-white/15 px-3 py-1.5 font-mono text-xs text-neutral-200 transition-colors hover:border-emerald-400/50 hover:text-emerald-400"
+  >
+    <FaGithub className="text-sm" aria-hidden="true" /> code <FiArrowUpRight aria-hidden="true" />
+  </a>
+);
+
+const Status = ({ status }) => (
+  <div className="mt-3 flex flex-wrap gap-2">
+    {status.map((item) => {
+      const isPrivate = item.startsWith("Private");
+      return (
+        <span
+          key={item}
+          className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 font-mono text-xs ${
+            isPrivate
+              ? "border-white/10 text-neutral-400"
+              : "border-emerald-400/30 bg-emerald-400/10 text-emerald-400"
+          }`}
+        >
+          {isPrivate ? (
+            <FiLock aria-hidden="true" />
+          ) : (
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 motion-safe:animate-pulse"></span>
+          )}
+          {item}
+        </span>
+      );
+    })}
+  </div>
+);
+
+const ProjectBody = ({ project }) => (
+  <div className="p-6 sm:p-7">
+    <div className="flex items-start justify-between gap-4">
+      <div>
+        <h3 className="text-xl font-semibold text-white">{project.title}</h3>
+        <p className="mt-1 font-mono text-xs text-neutral-500">
+          {project.subtitle}
+          {project.period && ` · ${project.period}`}
+        </p>
+      </div>
+      {project.repoUrl && <RepoLink href={project.repoUrl} />}
+    </div>
+
+    {project.status && <Status status={project.status} />}
+
+    <p className="mt-4 leading-relaxed text-neutral-300">{project.description}</p>
+
+    {project.points && (
+      <ul className="mt-4 space-y-2">
+        {project.points.map((point) => (
+          <li key={point} className="flex gap-3 text-sm leading-relaxed text-neutral-400">
+            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400"></span>
+            {point}
+          </li>
+        ))}
+      </ul>
+    )}
+
+    <div className="mt-5 flex flex-wrap gap-2">
+      {project.technologies.map((tech) => (
+        <Tag key={tech}>{tech}</Tag>
+      ))}
+    </div>
+  </div>
+);
+
+const FeaturedProject = ({ project, delay }) => {
+  const Drawn = VISUALS[project.visual];
+  const sideBySide = project.size === "full";
+
+  return (
+    <Card
+      delay={delay}
+      className={`overflow-hidden ${SPANS[project.size]} ${
+        sideBySide ? "lg:grid lg:grid-cols-[5fr_7fr]" : ""
+      }`}
+    >
+      <div
+        className={`border-white/10 bg-neutral-950/60 ${
+          sideBySide
+            ? "border-b lg:border-b-0 lg:border-r"
+            : "flex flex-col justify-center border-b lg:h-[444px]"
+        }`}
+      >
+        {Drawn ? (
+          <Drawn />
+        ) : (
+          <img
+            src={project.image}
+            alt={`${project.title} screenshot`}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+        )}
+      </div>
+      <ProjectBody project={project} />
+    </Card>
+  );
+};
+
+const CompactProject = ({ project, delay }) => (
+  <Card delay={delay} className="flex gap-5 p-5 lg:col-span-6">
+    <img
+      src={project.image}
+      alt={`${project.title} preview`}
+      loading="lazy"
+      className={`h-20 w-20 shrink-0 rounded-xl border border-white/10 sm:h-28 sm:w-28 ${
+        project.imageOnLight ? "bg-white object-contain p-1" : "object-cover"
+      }`}
+    />
+    <div className="min-w-0">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <div>
+          <h3 className="font-semibold text-white">{project.title}</h3>
+          <p className="font-mono text-xs text-neutral-500">{project.subtitle}</p>
+        </div>
+        {project.repoUrl && <RepoLink href={project.repoUrl} />}
+      </div>
+      <p className="mt-2 text-sm leading-relaxed text-neutral-400">{project.description}</p>
+      <div className="mt-3 flex flex-wrap gap-2">
+        {project.technologies.map((tech) => (
+          <Tag key={tech}>{tech}</Tag>
+        ))}
+      </div>
+    </div>
+  </Card>
+);
 
 const Projects = () => {
-  return (
-    <div className="border-b border-neutral-900 pb-12">
-        <motion.h1 
-          whileInView={{ opacity: 1, y: 0 }}
-          initial={{ opacity: 0, y: -100 }}
-          transition={{duration: 0.5 }}
-          className="mb-16 mt-20 text-center text-4xl font-bold">
-            Projects
-        </motion.h1>
-        <div className="mx-auto max-w-6xl px-4">
-            {PROJECTS.map((project, index) => (
-                <motion.div 
-                  key={index} 
-                  whileInView={{ opacity: 1, y: 0 }}
-                  initial={{ opacity: 0, y: 50 }}
-                  transition={{ duration: 0.7, delay: index * 0.1 }}
-                  className="mb-16 overflow-hidden rounded-lg bg-neutral-900/30 p-6 backdrop-blur-sm transition-all hover:shadow-lg hover:shadow-purple-900/20 lg:flex lg:items-center lg:gap-8"
-                >
-                    <div className="w-full lg:w-1/3">
-                        <a 
-                          href={project.repoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group relative block overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-purple-500/30"
-                        >
-                            <div className="absolute inset-0 bg-black/70 opacity-0 transition-opacity duration-300 group-hover:opacity-90 flex items-center justify-center">
-                              <FaGithub className="text-4xl text-white" />
-                              <span className="ml-2 text-white font-medium">View Repository</span>
-                            </div>
-                            <img 
-                              src={project.image} 
-                              alt={project.title}
-                              className="w-full transition-transform duration-500 group-hover:scale-110" 
-                            />
-                        </a>
-                    </div>
-                    <div className="mt-6 w-full lg:mt-0 lg:w-2/3">
-                        <h3 className="mb-3 text-xl font-bold text-white">{project.title}</h3>
-                        <p className="mb-6 text-neutral-300">{project.description}</p>
-                        <div className="flex flex-wrap gap-2">
-                            {project.technologies.map((tech, index) => (
-                                <span 
-                                  key={index} 
-                                  className="rounded-full bg-purple-900/30 px-3 py-1 text-sm font-medium text-purple-400 backdrop-blur-sm transition-colors hover:bg-purple-800/40"
-                                >
-                                  {tech}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                </motion.div>
-            ))}
-        </div>
-    </div>
-  )
-}
+  const featured = PROJECTS.filter((project) => project.size !== "compact");
+  const more = PROJECTS.filter((project) => project.size === "compact");
 
-export default Projects
+  return (
+    <Section id="projects" index="04" title="Projects">
+      <div className="grid gap-4 lg:grid-cols-12">
+        {featured.map((project, index) => (
+          <FeaturedProject key={project.title} project={project} delay={(index % 2) * 0.1} />
+        ))}
+      </div>
+
+      <div className="mb-4 mt-10">
+        <Label>More projects</Label>
+      </div>
+      <div className="grid gap-4 lg:grid-cols-12">
+        {more.map((project, index) => (
+          <CompactProject key={project.title} project={project} delay={index * 0.1} />
+        ))}
+      </div>
+    </Section>
+  );
+};
+
+export default Projects;

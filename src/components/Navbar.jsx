@@ -1,39 +1,67 @@
+import { useState } from "react";
+import { FiMenu, FiX, FiArrowUpRight } from "react-icons/fi";
 import logo from "../assets/logo.png";
-import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import resume from "../assets/Wong_Yeow_Kang_Resume.pdf";
+import { NAV_LINKS } from "../constants";
 
 const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav className="mb-5 flex items-center justify-between py-6">
-      <div className="flex flex-shrink-0 items-center">
-        <img className="mx-2 w-20" src={logo} alt="logo" />
-      </div>
-      <div className="m-8 flex flex-wrap items-center justify-center gap-4 text-4xl">
-        <span className="text-base text-neutral-200 font-medium">Connect with me here!</span>
-        <div className="flex items-center gap-4">
-          <a 
-            href="https://www.linkedin.com/in/wongyeowkang" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            aria-label="LinkedIn Profile">
-            <FaLinkedin />
-          </a>
-          <a 
-            href="https://github.com/ykwong2002" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            aria-label="GitHub Profile">
-            <FaGithub />
-          </a>
-          <a 
-            href="https://www.instagram.com/kang.eroo" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            aria-label="Instagram Profile">
-            <FaInstagram />
-          </a>
+    <header className="sticky top-0 z-50 border-b border-white/5 bg-neutral-950/70 backdrop-blur-md">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+        <a href="#top" aria-label="Back to top" className="flex items-center">
+          <img className="w-12" src={logo} alt="WYK logo" />
+        </a>
+
+        <div className="hidden items-center gap-7 md:flex">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="font-mono text-sm text-neutral-400 transition-colors hover:text-emerald-400"
+            >
+              {link.label}
+            </a>
+          ))}
         </div>
-      </div>
-    </nav>
+
+        <div className="flex items-center gap-2">
+          <a
+            href={resume}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 rounded-lg border border-emerald-400/40 px-3 py-1.5 font-mono text-sm text-emerald-400 transition-colors hover:bg-emerald-400/10"
+          >
+            resume <FiArrowUpRight aria-hidden="true" />
+          </a>
+          <button
+            type="button"
+            onClick={() => setOpen(!open)}
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            className="rounded-lg border border-white/10 p-2 text-lg text-neutral-300 md:hidden"
+          >
+            {open ? <FiX /> : <FiMenu />}
+          </button>
+        </div>
+      </nav>
+
+      {open && (
+        <div className="border-t border-white/5 px-4 py-2 md:hidden">
+          {NAV_LINKS.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="block py-2.5 font-mono text-sm text-neutral-300 hover:text-emerald-400"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+      )}
+    </header>
   );
 };
 
