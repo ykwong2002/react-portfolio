@@ -1,5 +1,5 @@
 import { FaGithub } from "react-icons/fa";
-import { FiArrowUpRight, FiLock } from "react-icons/fi";
+import { FiArrowUpRight, FiLock, FiPlay } from "react-icons/fi";
 import { PROJECTS } from "../constants";
 import { Section, Card, Tag, Label } from "./ui";
 import VaultGraph from "./VaultGraph";
@@ -10,21 +10,34 @@ const VISUALS = {
   "vault-graph": VaultGraph,
 };
 
-const SPANS = {
-  half: "lg:col-span-6",
-  full: "lg:col-span-12",
-};
+const ProjectLinks = ({ project }) => {
+  if (!project.liveUrl && !project.repoUrl) return null;
 
-const RepoLink = ({ href }) => (
-  <a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-white/15 px-3 py-1.5 font-mono text-xs text-neutral-200 transition-colors hover:border-emerald-400/50 hover:text-emerald-400"
-  >
-    <FaGithub className="text-sm" aria-hidden="true" /> code <FiArrowUpRight aria-hidden="true" />
-  </a>
-);
+  return (
+    <div className="flex shrink-0 flex-wrap justify-end gap-2">
+      {project.liveUrl && (
+        <a
+          href={project.liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 rounded-lg bg-emerald-400 px-3 py-1.5 font-mono text-xs font-medium text-neutral-950 transition-colors hover:bg-emerald-300"
+        >
+          <FiPlay aria-hidden="true" /> play
+        </a>
+      )}
+      {project.repoUrl && (
+        <a
+          href={project.repoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-white/15 px-3 py-1.5 font-mono text-xs text-neutral-200 transition-colors hover:border-emerald-400/50 hover:text-emerald-400"
+        >
+          <FaGithub className="text-sm" aria-hidden="true" /> code <FiArrowUpRight aria-hidden="true" />
+        </a>
+      )}
+    </div>
+  );
+};
 
 const Status = ({ status }) => (
   <div className="mt-3 flex flex-wrap gap-2">
@@ -61,7 +74,7 @@ const ProjectBody = ({ project }) => (
           {project.period && ` · ${project.period}`}
         </p>
       </div>
-      {project.repoUrl && <RepoLink href={project.repoUrl} />}
+      <ProjectLinks project={project} />
     </div>
 
     {project.status && <Status status={project.status} />}
@@ -89,30 +102,20 @@ const ProjectBody = ({ project }) => (
 
 const FeaturedProject = ({ project, delay }) => {
   const Drawn = VISUALS[project.visual];
-  const sideBySide = project.size === "full";
 
   return (
-    <Card
-      delay={delay}
-      className={`overflow-hidden ${SPANS[project.size]} ${
-        sideBySide ? "lg:grid lg:grid-cols-[5fr_7fr]" : ""
-      }`}
-    >
-      <div
-        className={`border-white/10 bg-neutral-950/60 ${
-          sideBySide
-            ? "border-b lg:border-b-0 lg:border-r"
-            : "flex flex-col justify-center border-b lg:h-[444px]"
-        }`}
-      >
+    <Card delay={delay} className="overflow-hidden lg:col-span-6">
+      <div className="border-b border-white/10 bg-neutral-950/60">
         {Drawn ? (
-          <Drawn />
+          <div className="flex flex-col justify-center lg:h-[444px]">
+            <Drawn />
+          </div>
         ) : (
           <img
             src={project.image}
             alt={`${project.title} screenshot`}
             loading="lazy"
-            className="h-full w-full object-cover"
+            className="aspect-video w-full object-cover"
           />
         )}
       </div>
@@ -137,7 +140,7 @@ const CompactProject = ({ project, delay }) => (
           <h3 className="font-semibold text-white">{project.title}</h3>
           <p className="font-mono text-xs text-neutral-500">{project.subtitle}</p>
         </div>
-        {project.repoUrl && <RepoLink href={project.repoUrl} />}
+        <ProjectLinks project={project} />
       </div>
       <p className="mt-2 text-sm leading-relaxed text-neutral-400">{project.description}</p>
       <div className="mt-3 flex flex-wrap gap-2">

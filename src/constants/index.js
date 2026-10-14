@@ -22,6 +22,7 @@ import {
 import nomster from "../assets/projects/nomster.png";
 import spotifind from "../assets/projects/spotifind.png";
 import linklist from "../assets/projects/LINKLIST.jpg";
+import hdbreeze from "../assets/projects/hdbreeze.png";
 
 export const PROFILE = {
   name: "Wong Yeow Kang",
@@ -215,6 +216,7 @@ export const EXPERIENCES = [
 
 // `visual` picks a drawn component in Projects.jsx; otherwise `image` is used.
 // Leave `repoUrl` out while a repo is private and the card shows no link.
+// `liveUrl` adds a "play" button for projects with a public demo.
 export const PROJECTS = [
   {
     title: "Financial Document Processing",
@@ -251,10 +253,27 @@ export const PROJECTS = [
     technologies: ["Claude Code", "MCP", "Obsidian", "Agents", "Fine-tuning"],
   },
   {
+    title: "HDBreeze",
+    subtitle: "Wind Simulation Game",
+    period: "Oct 2026",
+    size: "half",
+    image: hdbreeze,
+    description:
+      "A fan-made web game about how HDB block layouts shape the breeze at street level. Place blocks on real plots in Punggol, Tengah and Ang Mo Kio, watch a live wind and heat field, and keep the residents comfortable.",
+    points: [
+      "The wind is a toy 2D lattice-Boltzmann simulation running on the phone's GPU through WebGL2, with a simple heat model on top.",
+      "Residents complain in Singlish through a 0.8M-parameter nanoGPT-style model I trained for it, running entirely in the browser.",
+      "Real buildings baked from data.gov.sg HDB data, the URA Master Plan and OpenStreetMap, drawn with MapLibre GL JS.",
+    ],
+    technologies: ["TypeScript", "WebGL2", "MapLibre GL", "PyTorch", "Cloudflare Workers"],
+    liveUrl: "https://hdbreeze.ykbuilds.workers.dev/",
+    repoUrl: "https://github.com/ykwong2002/hdbreeze",
+  },
+  {
     title: "SpotiFind",
     subtitle: "Music Recommendation System",
     period: "Jan 2025 – May 2025",
-    size: "full",
+    size: "half",
     image: spotifind,
     description:
       "A music recommender that mixes audio features, lyric sentiment and hybrid filtering to pick the next track.",
